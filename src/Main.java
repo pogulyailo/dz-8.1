@@ -3,15 +3,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Scanner in = null;
+
 
         System.out.print("Number people - ");
-        int peopleCount = in.nextInt();
+        Scanner in;
+        int peopleCount = scanner.nextInt();
 
         System.out.print("Limit libraries - ");
-        int maxAmount = in.nextInt();
+        int maxAmount = scanner.nextInt();
 
-        in.nextLine();
+        scanner.nextLine();
 
         Library library = new Library(maxAmount);
         for (int i = 0; i < peopleCount; i++) {
