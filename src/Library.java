@@ -11,8 +11,8 @@ public class Library {
     private final Semaphore doorSemaphore;
 
     public Library (int maxAmount){
-        librarySemaphore = new Semaphore(maxAmount, true);
-        doorSemaphore = new Semaphore(DOOR_TRAVEL_TIME, true);
+        librarySemaphore = new Semaphore(maxAmount);
+        doorSemaphore = new Semaphore(DOOR_TRAVEL_TIME);
     }
 
     public void Visitors ()throws InterruptedException {
@@ -34,7 +34,7 @@ public class Library {
         System.out.println(threadName + " entered the library ");
         doorSemaphore.release();
 
-        System.out.println(" read book");
+        System.out.println(threadName + " read book");
         Thread.sleep((MAX_READ_TIME - MIN_READ_TIME) + MIN_READ_TIME);
 
         doorSemaphore.acquire();

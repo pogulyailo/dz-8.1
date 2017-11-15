@@ -6,23 +6,23 @@ public class Main {
 
 
         System.out.print("Number people - ");
-        Scanner in;
-        int peopleCount = scanner.nextInt();
+                Scanner in;
+                int peopleCount = scanner.nextInt();
 
-        System.out.print("Limit libraries - ");
-        int maxAmount = scanner.nextInt();
+                System.out.print("Limit libraries - ");
+                int maxAmount = scanner.nextInt();
 
-        scanner.nextLine();
+                scanner.nextLine();
 
-        Library library = new Library(maxAmount);
-        for (int i = 0; i < peopleCount; i++) {
-            new Thread(() -> {
-                try {
-                    library.Visitors();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }).start();
+                Library library = new Library(maxAmount);
+                for (int i = 0; i < peopleCount; i++) {
+        new Thread(() -> {
+        try {
+        library.Visitors();
+        } catch (InterruptedException e) {
+        e.printStackTrace();
         }
-    }
-}
+        }).start();
+        }
+        }
+        }
